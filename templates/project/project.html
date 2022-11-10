@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Project{% endblock title %}
+{% block css %}
+
+<style>
+    .box{
+        margin-top: 5px;
+        background: #ffb1e9;
+        padding: 8px 0;
+        border-radius: 4px;
+    }
+</style>
+
+{% endblock css %}
+{% block body %}
+
+<div class="container">
+    <h1>Projects</h1>
+
+    <div class="container text-center">
+        <div class="row d-flex justify-content-between">
+          <div class="col-md-2 box">
+            Total Projects
+            <h3>10</h3>
+          </div>
+          <div class="col-md-2 box">
+            Pending Projects
+            <h3>3</h3>
+          </div>
+          <div class="col-md-2 box">
+            Ongoing Projects
+            <h3>2</h3>
+          </div>
+          <div class="col-md-2 box">
+            Complete Projects
+            <h3>5</h3>
+          </div>
+          <div class="col-md-2 box">
+            <a href="/project/newproject/" class="btn btn-primary">Create New Project</a>
+          </div>
+        </div>
+      </div>
+</div>
+
+
+
+
+{% endblock body %}

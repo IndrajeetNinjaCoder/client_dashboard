@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock title %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    {% block css %}{% endblock css %}
+
+
+
+    <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+
+
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+
+        .b-example-divider {
+            height: 3rem;
+            background-color: rgba(0, 0, 0, .1);
+            border: solid rgba(0, 0, 0, .15);
+            border-width: 1px 0;
+            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+        }
+
+        .b-example-vr {
+            flex-shrink: 0;
+            width: 1.5rem;
+            height: 100vh;
+        }
+
+        .bi {
+            vertical-align: -.125em;
+            fill: currentColor;
+        }
+
+        .nav-scroller {
+            position: relative;
+            z-index: 2;
+            height: 2.75rem;
+            overflow-y: hidden;
+        }
+
+        .nav-scroller .nav {
+            display: flex;
+            flex-wrap: nowrap;
+            padding-bottom: 1rem;
+            margin-top: -1px;
+            overflow-x: auto;
+            text-align: center;
+            white-space: nowrap;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .mb-1 {
+            background: #3c3cff7a;
+            /* color: blue; */
+            border: 2px solid white;
+            border-radius: 6px;
+        }
+
+        button.btn-toggle {
+            color: blue;
+            font-weight: bold;
+        }
+
+        li {
+            border-top: 2px solid white;
+            margin: 4px 5px 0 5px;
+            /* margin-left: 17px; */
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+
+    <main class="d-flex flex-nowrap">
+        <h1 class="visually-hidden">Sidebars examples</h1>
+        <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
+            {% comment %} <a href="/"
+                class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+                <svg class="bi pe-none me-2" width="30" height="24">
+                    <use xlink:href="#bootstrap"></use>
+                </svg>
+                <span class="fs-5 fw-semibold">Collapsible</span>
+            </a> {% endcomment %}
+            <ul class="list-unstyled ps-0">
+
+                <li class="mb-1">
+                    <a href="#"><button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Dashboard</button></a>
+                    <div class="collapse show" id="home-collapse">
+                </li>
+
+                <li class="mb-1">
+                    <a href="/project"><button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Project</button></a>
+                    <div class="collapse show" id="home-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Project</a>
+                            </li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Project
+                                    Details</a>
+                            </li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New Project</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li>
+                {% comment %} <li class="mb-1">
+                    <a href="/project"><button
+                            class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                            data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="true">
+                            Project
+                        </button></a>
+                    <div class="collapse" id="dashboard-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Project</a>
+                            </li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Project
+                                    Details</a>
+                            </li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">New Project</a>
+                            </li>
+
+                        </ul>
+                    </div>
+                </li> {% endcomment %}
+                <li class="mb-1">
+                    <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                        Client
+                    </button>
+                    <div class="collapse" id="orders-collapse">
+                        <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Manage
+                                    Clients</a>
+                            </li>
+                            <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Client
+                                    Details</a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="border-top my-3"></li>
+                <li class="mb-1">
+                    <a href="/logout" class="btn btn-primary">Logout</a>
+
+                </li>
+            </ul>
+        </div>
+
+        <div class="container my-4">
+            {% block body %}{% endblock body %}
+        </div>
+    </main>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+        crossorigin="anonymous"></script>
+
+    {% block js %}{% endblock js %}
+</body>
+
+</html>
