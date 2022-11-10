@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Client{% endblock title %}
+{% block css %}
+
+<style>
+  .box {
+    margin-top: 5px;
+    background: #ffb1e9;
+    padding: 8px 0;
+    border-radius: 4px;
+  }
+  button[type="submit"]{
+    display: block;
+    margin: auto;
+  }
+</style>
+
+{% endblock css %}
+{% block body %}
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add Client</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Client Name</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Client Company</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Company Name">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label" placeholder="Company Name">Client Phone</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label" placeholder="Company Name">Client Email</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+         
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1>Client</h1>
+
+  <div class="container text-center">
+    <div class="row d-flex justify-content-between">
+      <div class="col-md-2 box">
+        Total Clients
+        <h3>4</h3>
+      </div>
+      <div class="col-md-2 box">
+        Current Client
+        <h3>4</h3>
+      </div>
+
+      <div class="col-md-2 box">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new
+          Client</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+{% endblock body %}
