@@ -8,11 +8,6 @@ def projectHome(request):
     pendingProjects = Project.objects.filter(work_status='pending').count()
     ongoingProjects = Project.objects.filter(work_status='onProgress').count()
 
-    print(f"Total Projects : {totalProjects}")
-    print(f"Complete Projects : {completeProjects}")
-    print(f"pending Projects : {pendingProjects}")
-    print(f"ongoing Projects : {ongoingProjects}")
-
     return render(request, 'project/project.html', {'totalProjects':totalProjects, 'completeProjects':completeProjects, 'pendingProjects': pendingProjects, 'ongoingProjects':ongoingProjects})
 
 def newproject(request):

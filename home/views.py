@@ -1,7 +1,8 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-
+from client.models import Client
+from project.models import Project
 
 # Create your views here.
 def home(request):
@@ -55,11 +56,9 @@ def handleLogin(request):
 
         if user is not None:
             login(request, user)
-            # messages.success(request, "Successfully Logged In")
             return redirect('dashboard')
         else:
-            # messages.error(request, "Invalid Credentials, Please try again")
-            return redirect('dashboard')
+            return HttpResponse("404 - Not Found")
 
     return HttpResponse('404 Not Found')
 
@@ -69,6 +68,15 @@ def handleLogout(request):
     return redirect('home')
 
 def dashboard(request):
-    return render(request, 'base.html');
 
+    totalClients = Client.objects.all().count()
+    totalProjects = Project.objects.all().count()
+    completedProjects = Project.objects.filter(work_status="complete").count()
+
+    incomplete = totalProjects - completedProjects
+
+    print(f"Total Clients: {totalClients}")
+    print(f"completed projects: {completedProjects}")
+
+    return render(request, 'home/dashboard.html', {'totalClients':totalClients, 'totalProjects': totalProjects, 'completedProjects':completedProjects, 'incomplete': incomplete})
 

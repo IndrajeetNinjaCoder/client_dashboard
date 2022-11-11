@@ -5,14 +5,29 @@
 <style>
   .box {
     margin-top: 5px;
-    background: #ffb1e9;
     padding: 8px 0;
     border-radius: 4px;
   }
-  button[type="submit"]{
+  #box1{
+    background-color: #b5b1ff80;
+  }
+  #box2{
+    background-color: #b1ffd3b5;
+  }
+ 
+
+
+  button[type="submit"] {
     display: block;
     margin: auto;
   }
+
+  .add-icon {
+    width: 23px;
+    filter: invert(1);
+    
+  }
+
 </style>
 
 {% endblock css %}
@@ -31,56 +46,56 @@
       </div>
       <div class="modal-body">
 
-        <form>
+        <form method="post" action="/client/createclient/">    {% csrf_token %}
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Client Name</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            
+            <label for="name" class="form-label">Client Name</label>
+            <input type="text" name="name" class="form-control" id="name" aria-describedby="emailHelp">
+
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Client Company</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Company Name">
+            <label for="company" class="form-label">Client Company</label>
+            <input type="text" name="company" class="form-control" id="company" placeholder="Company Name">
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label" placeholder="Company Name">Client Phone</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="phone" class="form-label" placeholder="Company Name">Client Phone</label>
+            <input type="text" name="phone" class="form-control" id="phone">
           </div>
 
           <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label" placeholder="Company Name">Client Email</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <label for="email" class="form-label" placeholder="Company Name">Client Email</label>
+            <input type="email" name="email" class="form-control" id="email">
           </div>
-         
+
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
 
       </div>
-     
+
     </div>
   </div>
 </div>
 
 <div class="container">
-  <h1>Client</h1>
+  <h2 class="my-4">Client Details</h2>
 
   <div class="container text-center">
     <div class="row d-flex justify-content-between">
-      <div class="col-md-2 box">
+      <div class="col-md-2 box" id="box1">
         Total Clients
-        <h3>4</h3>
+        <h3>{{totalClients}}</h3>
       </div>
-      <div class="col-md-2 box">
+      <div class="col-md-2 box" id="box2">
         Current Client
-        <h3>4</h3>
+        <h3>{{currentClients}}</h3>
       </div>
 
-      <div class="col-md-2 box">
+      <div class="col-md-2 box" id="box3">
         <!-- Button trigger modal -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Add new
-          Client</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <img class="add-icon" src="/static/img/add.png"alt="My image"> ADD NEW CLIENT</button>
       </div>
     </div>
   </div>

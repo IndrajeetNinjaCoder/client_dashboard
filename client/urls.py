@@ -3,5 +3,5 @@ from . import views
 
 urlpatterns = [
     path('', views.clientHome, name="clientHome"),
-    path('newclient/', views.newclient, name="newclient"),
+    path('createclient/', views.createclient, name="createclient"),
 ]

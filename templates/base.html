@@ -92,6 +92,13 @@
             margin: 4px 5px 0 5px;
             /* margin-left: 17px; */
         }
+        .logout{
+            background: none;
+        }
+
+        .icon {
+            width: 23px;
+          }
     </style>
 
 
@@ -113,12 +120,16 @@
             <ul class="list-unstyled ps-0">
 
                 <li class="mb-1">
-                    <a href="#"><button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
-                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Dashboard</button></a>
+                    <img class="icon mx-2" src="/static/img/home.png" alt="My image">
+                    <a href="/dashboard">
+                        <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                        data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Dashboard</button>
+                    </a>
                     <div class="collapse show" id="home-collapse">
                 </li>
 
                 <li class="mb-1">
+                    <img class="icon mx-2" src="/static/img/thunder.png" alt="My image">
                     <a href="/project"><button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                         data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Project</button></a>
                     <div class="collapse show" id="home-collapse">
@@ -137,6 +148,7 @@
 
 
                 <li class="mb-1">
+                    <img class="icon mx-2" src="/static/img/client.png" alt="My image">
                     <a href="/client"><button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                         data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Client</button></a>
                     <div class="collapse show" id="home-collapse">
@@ -165,7 +177,7 @@
                     </div>
                 </li> -->
                 <li class="border-top my-3"></li>
-                <li class="mb-1">
+                <li class="mb-1 logout">
                     <a href="/logout" class="btn btn-primary">Logout</a>
 
                 </li>
