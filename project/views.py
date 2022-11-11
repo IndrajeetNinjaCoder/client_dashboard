@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from .models import Project
+from client.models import Client
 # Create your views here.
 
 def projectHome(request):
@@ -11,7 +12,8 @@ def projectHome(request):
     return render(request, 'project/project.html', {'totalProjects':totalProjects, 'completeProjects':completeProjects, 'pendingProjects': pendingProjects, 'ongoingProjects':ongoingProjects})
 
 def newproject(request):
-    return render(request, 'project/newproject.html')
+    allClients = Client.objects.all()
+    return render(request, 'project/newproject.html', {'allClients': allClients})
 
 def createProject(request):
     if request.method == 'POST':

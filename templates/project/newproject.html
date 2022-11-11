@@ -45,9 +45,9 @@
                 <label for="client" class="form-label">Client:</label>
                 <select class="form-select" name="client" id="client" required="">
                     <option value="">Select Client</option>
-                    <option value="Client 01">Client 01</option>
-                    <option value="Client 02">Client 02</option>
-                    <option value="Client 03">Client 03</option>
+                    {% for client in allClients %}
+                    <option value="Client 01">{{client.name}}</option>
+                    {% endfor %}
                   </select>
             </div>
 
