@@ -75,16 +75,25 @@
             -webkit-overflow-scrolling: touch;
         }
 
-        .mb-1 {
-            background: #3c3cff7a;
-            /* color: blue; */
-            border: 2px solid white;
-            border-radius: 6px;
+        .mb-1{
+            border-radius: 7px;
+        }
+
+        .mb-1 a{
+            text-decoration: none;
+        }
+        .mb-1 a button.btn{
+            color: black;
+            text-decoration: none;
         }
 
         button.btn-toggle {
             color: blue;
             font-weight: bold;
+        }
+
+        .show ul li a{
+            color: blue;
         }
 
         li {
@@ -119,20 +128,20 @@
             </a> {% endcomment %}
             <ul class="list-unstyled ps-0">
 
-                <li class="mb-1">
+                <li class="mb-1 dashboard">
                     <img class="icon mx-2" src="/static/img/home.png" alt="My image">
                     <a href="/dashboard">
                         <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                         data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Dashboard</button>
                     </a>
-                    <div class="collapse show" id="home-collapse">
+                    
                 </li>
 
-                <li class="mb-1">
+                <li class="mb-1 project">
                     <img class="icon mx-2" src="/static/img/thunder.png" alt="My image">
                     <a href="/project"><button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                         data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Project</button></a>
-                    <div class="collapse show" id="home-collapse">
+                    <div class="collapse {% block project %}{% endblock project %}" id="home-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Project</a>
                             </li>
@@ -147,11 +156,11 @@
                 </li>
 
 
-                <li class="mb-1">
+                <li class="mb-1 client">
                     <img class="icon mx-2" src="/static/img/client.png" alt="My image">
                     <a href="/client"><button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
                         data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">Client</button></a>
-                    <div class="collapse show" id="home-collapse">
+                    <div class="collapse {% block client %}{% endblock client %}" id="home-collapse">
                         <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
                             <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">Manage Clients</a>
                             </li>
